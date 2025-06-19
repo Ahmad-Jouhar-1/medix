@@ -1,0 +1,73 @@
+final upcomingAppointments = [
+  {
+    "id": 1,
+    "shift": "Morning",
+    "status": "Upcoming",
+    "doctor_name": "Layla Hassan",
+    "doctor_image": "https://pngimg.com/d/doctor_PNG16002.png",
+    "department": {"id": 1, "name": "Cardiology"},
+    "date_time": "2025-05-24T10:30:00Z",
+    "request_type_id": 1,
+    "with_medical_report": true,
+  },
+  {
+    "id": 2,
+    "shift": "Morning",
+    "status": "Upcoming",
+    "doctor_name": "Fares Al Midany",
+    "doctor_image": "https://pngimg.com/d/doctor_PNG15959.png",
+    "department": {"id": 2, "name": "Neurology"},
+    "date_time": "2025-05-25T12:30:00Z",
+    "request_type_id": 2,
+    "with_medical_report": false,
+  },
+  {
+    "id": 3,
+    "shift": "Afternoon",
+    "status": "Upcoming",
+    "doctor_name": "Rand Skaf",
+    "doctor_image":
+        "https://pngimg.com/uploads/doctor/small/doctor_PNG15960.png",
+    "department": {"id": 3, "name": "Pediatrics"},
+    "date_time": "2025-05-26T15:00:00Z",
+    "request_type_id": 2,
+    "with_medical_report": true,
+  },
+];
+
+final completedAppointments = [
+  {
+    "id": 1,
+    "shift": "Morning",
+    "status": "Completed",
+    "doctor_name": "Maya Al Qassem",
+    "doctor_image": "https://pngimg.com/d/doctor_PNG16014.png",
+    "department": {"id": 4, "name": "Dermatology"},
+    "date_time": "2025-05-10T10:30:00Z",
+    "request_type_id": 1,
+    "with_medical_report": true,
+  },
+  {
+    "id": 2,
+    "shift": "Morning",
+    "status": "Completed",
+    "doctor_name": "Fares Al Midany",
+    "doctor_image": "https://pngimg.com/d/doctor_PNG15959.png",
+    "department": {"id": 2, "name": "Neurology"},
+    "date_time": "2025-05-05T10:00:00Z",
+    "request_type_id": 1,
+    "with_medical_report": true,
+  },
+  {
+    "id": 3,
+    "shift": "Afternoon",
+    "status": "Completed",
+    "doctor_name": "Rand Skaf",
+    "doctor_image":
+        "https://pngimg.com/uploads/doctor/small/doctor_PNG15960.png",
+    "department": {"id": 3, "name": "Pediatrics"},
+    "date_time": "2025-05-01T17:30:00Z",
+    "request_type_id": 1,
+    "with_medical_report": false,
+  },
+];
