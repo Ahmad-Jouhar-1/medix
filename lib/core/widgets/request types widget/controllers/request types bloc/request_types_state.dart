@@ -5,13 +5,13 @@ sealed class RequestTypesState {
     required this.currentRequestTypeId,
     required this.previousRequestTypeId,
     required this.isDroppedDown,
-    required this.isActive,
+    required this.isRequestTypesWidgetActived,
   });
 
   final int currentRequestTypeId;
   final int previousRequestTypeId;
   final bool isDroppedDown;
-  final bool isActive;
+  final bool isRequestTypesWidgetActived;
 }
 
 final class RequestTypesInitial extends RequestTypesState {
@@ -20,7 +20,7 @@ final class RequestTypesInitial extends RequestTypesState {
         currentRequestTypeId: -1,
         previousRequestTypeId: -1,
         isDroppedDown: false,
-        isActive: false,
+        isRequestTypesWidgetActived: false,
       );
 }
 
@@ -29,6 +29,6 @@ final class RequestTypesUpdated extends RequestTypesState {
     required super.currentRequestTypeId,
     required super.previousRequestTypeId,
     required super.isDroppedDown,
-    required super.isActive,
+    required super.isRequestTypesWidgetActived,
   });
 }

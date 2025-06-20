@@ -22,7 +22,7 @@ class DoctorImageWidget extends StatelessWidget {
           ),
         ),
         clipBehavior: Clip.hardEdge,
-        child: Image(image: NetworkImage(image)),
+        child: Image(image: AssetImage(image)),
       ),
     );
   }

@@ -6,86 +6,92 @@ part 'times_state.dart';
 
 class TimesBloc extends Bloc<TimesEvent, TimesState> {
   TimesBloc() : super(TimesInitial()) {
-    on<CurrentTimeIdChanged>((event, emit) {
+    on<CurrentTimeAndDoctorIdsAreChanged>((event, emit) {
       emit(
         TimesUpdated(
-          previousTimeId: state.previousTimeId,
+          currentDoctorId: event.currentDoctorId,
           currentTimeId: event.currentTimeId,
-          previousDay: state.previousDay,
-          currentDay: state.currentDay,
-          isMorningDroppedDown: state.isMorningDroppedDown,
-          isAfternoonDroppedDown: state.isAfternoonDroppedDown,
-        ),
-      );
-    });
-
-    on<TimesIdsAreSet>((event, emit) {
-      emit(
-        TimesUpdated(
-          previousTimeId: event.timeId,
-          currentTimeId: event.timeId,
-          previousDay: state.previousDay,
-          currentDay: state.currentDay,
-          isMorningDroppedDown: state.isMorningDroppedDown,
-          isAfternoonDroppedDown: state.isAfternoonDroppedDown,
-        ),
-      );
-    });
-
-    on<TimesBlocDayIdsChanged>((event, emit) {
-      late int currentTimeId;
-      if (event.currentDay == event.previousDay) {
-        currentTimeId = state.previousTimeId;
-      } else {
-        currentTimeId = -1;
-      }
-      emit(
-        TimesUpdated(
           previousTimeId: state.previousTimeId,
-          currentTimeId: currentTimeId,
-          previousDay: event.previousDay,
+          currentDay: state.currentDay,
+          previousDay: state.previousDay,
+          areMorningTimesDroppedDown: state.areMorningTimesDroppedDown,
+          areAfternoonTimesDroppedDown: state.areAfternoonTimesDroppedDown,
+          isTimesWidgetActivated: state.isTimesWidgetActivated,
+        ),
+      );
+    });
+
+    on<CurrentAndPreviousDayAndCurrentAndPreviousTimeIdsAreSet>((event, emit) {
+      emit(
+        TimesUpdated(
+          currentDoctorId: state.currentDoctorId,
+          currentTimeId: event.currentTimeId,
+          previousTimeId: event.previousTimeId,
           currentDay: event.currentDay,
-          isMorningDroppedDown: state.isMorningDroppedDown,
-          isAfternoonDroppedDown: state.isAfternoonDroppedDown,
+          previousDay: event.previousDay,
+          areMorningTimesDroppedDown: state.areMorningTimesDroppedDown,
+          areAfternoonTimesDroppedDown: state.areAfternoonTimesDroppedDown,
+          isTimesWidgetActivated: state.isTimesWidgetActivated,
         ),
       );
     });
 
-    on<IsMorningDroppedDownToggled>((event, emit) {
+    on<AreMorningTimesDroppedDownIsToggled>((event, emit) {
       emit(
         TimesUpdated(
-          previousTimeId: state.previousTimeId,
+          currentDoctorId: state.currentDoctorId,
           currentTimeId: state.currentTimeId,
-          previousDay: state.previousDay,
-          currentDay: state.currentDay,
-          isMorningDroppedDown: !state.isMorningDroppedDown,
-          isAfternoonDroppedDown: state.isAfternoonDroppedDown,
-        ),
-      );
-    });
-
-    on<IsAfternoonDroppedDownToggled>((event, emit) {
-      emit(
-        TimesUpdated(
           previousTimeId: state.previousTimeId,
-          currentTimeId: state.currentTimeId,
-          previousDay: state.previousDay,
           currentDay: state.currentDay,
-          isMorningDroppedDown: state.isMorningDroppedDown,
-          isAfternoonDroppedDown: !state.isAfternoonDroppedDown,
+          previousDay: state.previousDay,
+          areMorningTimesDroppedDown: !state.areMorningTimesDroppedDown,
+          areAfternoonTimesDroppedDown: state.areAfternoonTimesDroppedDown,
+          isTimesWidgetActivated: state.isTimesWidgetActivated,
         ),
       );
     });
 
-    on<TimesReset>((event, emit) {
+    on<AreAfternoonTimesDroppedDownIsToggled>((event, emit) {
       emit(
         TimesUpdated(
+          currentDoctorId: state.currentDoctorId,
+          currentTimeId: state.currentTimeId,
+          previousTimeId: state.previousTimeId,
+          currentDay: state.currentDay,
+          previousDay: state.previousDay,
+          areMorningTimesDroppedDown: state.areMorningTimesDroppedDown,
+          areAfternoonTimesDroppedDown: !state.areAfternoonTimesDroppedDown,
+          isTimesWidgetActivated: state.isTimesWidgetActivated,
+        ),
+      );
+    });
+
+    on<TimesWidgetIsReset>((event, emit) {
+      emit(
+        TimesUpdated(
+          currentDoctorId: -1,
           previousTimeId: -1,
           currentTimeId: -1,
           previousDay: "",
           currentDay: "",
-          isMorningDroppedDown: false,
-          isAfternoonDroppedDown: false,
+          areMorningTimesDroppedDown: false,
+          areAfternoonTimesDroppedDown: false,
+          isTimesWidgetActivated: state.isTimesWidgetActivated,
+        ),
+      );
+    });
+
+    on<IsTimesWidgetActivatedIsToggled>((event, emit) {
+      emit(
+        TimesUpdated(
+          currentDoctorId: state.currentDoctorId,
+          previousTimeId: state.previousTimeId,
+          currentTimeId: state.previousTimeId,
+          previousDay: state.previousDay,
+          currentDay: state.currentDay,
+          areMorningTimesDroppedDown: state.areMorningTimesDroppedDown,
+          areAfternoonTimesDroppedDown: state.areAfternoonTimesDroppedDown,
+          isTimesWidgetActivated: !state.isTimesWidgetActivated,
         ),
       );
     });

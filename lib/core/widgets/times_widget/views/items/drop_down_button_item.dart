@@ -20,9 +20,11 @@ class DropDownButtonItem extends StatelessWidget {
     return InkWell(
       onTap: () {
         if (shift == "Morning") {
-          context.read<TimesBloc>().add(IsMorningDroppedDownToggled());
+          context.read<TimesBloc>().add(AreMorningTimesDroppedDownIsToggled());
         } else {
-          context.read<TimesBloc>().add(IsAfternoonDroppedDownToggled());
+          context.read<TimesBloc>().add(
+            AreAfternoonTimesDroppedDownIsToggled(),
+          );
         }
       },
       borderRadius: BorderRadius.circular(AppDimensions.mbr),

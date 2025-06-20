@@ -13,13 +13,13 @@ class DroppableItem extends StatelessWidget {
     required this.height,
     required this.currentRequestTypeId,
     required this.previousRequestTypeId,
-    required this.isActive,
+    required this.isRequestTypesWidgetActived,
   });
 
   final double height;
   final int currentRequestTypeId;
   final int previousRequestTypeId;
-  final bool isActive;
+  final bool isRequestTypesWidgetActived;
 
   @override
   Widget build(BuildContext context) {
@@ -40,13 +40,13 @@ class DroppableItem extends StatelessWidget {
             requestType: RequestTypeModel.fromJson(requestTypes[0]),
             currentRequestTypeId: currentRequestTypeId,
             previousRequestTypeId: previousRequestTypeId,
-            isActive: isActive,
+            isRequestTypesWidgetActived: isRequestTypesWidgetActived,
           ),
           TypeItem(
             requestType: RequestTypeModel.fromJson(requestTypes[1]),
             currentRequestTypeId: currentRequestTypeId,
             previousRequestTypeId: previousRequestTypeId,
-            isActive: isActive,
+            isRequestTypesWidgetActived: isRequestTypesWidgetActived,
           ),
         ],
       ),

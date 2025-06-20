@@ -4,14 +4,14 @@ sealed class TitledCheckboxEvent {
   const TitledCheckboxEvent();
 }
 
-class IsCurrentCheckedToggled extends TitledCheckboxEvent {}
+class IsCurrentCheckedIsToggled extends TitledCheckboxEvent {}
 
-class TitledCheckboxIsActivated extends TitledCheckboxEvent {}
+class IsTitledCheckboxWidgetActivatedIsToggled extends TitledCheckboxEvent {}
 
-class ActivatedAndChecksAreSet extends TitledCheckboxEvent {
-  final bool isChecked;
+class CurrentAndPreviousCheckAreSet extends TitledCheckboxEvent {
+  final bool currentAndPreviousCheck;
 
-  ActivatedAndChecksAreSet({required this.isChecked});
+  CurrentAndPreviousCheckAreSet({required this.currentAndPreviousCheck});
 }
 
-class TitledCheckboxReset extends TitledCheckboxEvent {}
+class TitledCheckboxWidgetIsReset extends TitledCheckboxEvent {}

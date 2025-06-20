@@ -1,4 +1,4 @@
-import 'package:clinic_management_system/app/book%20appointment/models/day_model.dart';
+import 'package:clinic_management_system/app/book_appointment/models/day_model.dart';
 import 'package:clinic_management_system/core/widgets/days_widget/controllers/days_bloc/days_bloc.dart';
 import 'package:clinic_management_system/core/widgets/days_widget/views/items/days_grid_view_item.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +17,7 @@ class DaysWidget extends StatelessWidget {
           days: days,
           currentDay: state.currentDay,
           previousDay: state.previousDay,
+          isDaysWidgetActivated: state.isDaysWidgetActivated,
         );
       },
     );

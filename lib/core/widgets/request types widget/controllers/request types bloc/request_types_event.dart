@@ -10,12 +10,14 @@ class CurrentRequestTypeIdChanged extends RequestTypesEvent {
 
 class IsDroppedDownToggled extends RequestTypesEvent {}
 
-class RequestTypesAreActivated extends RequestTypesEvent {}
+class IsRequestTypesWidgetActivedIsToggled extends RequestTypesEvent {}
 
-class ActivatedAndRequestTypeIdsAreSet extends RequestTypesEvent {
-  final int requestTypeId;
+class CurrentAndPreviousRequestTypeIdsAreSet extends RequestTypesEvent {
+  final int currentAndPreviousRequestTypeIds;
 
-  ActivatedAndRequestTypeIdsAreSet({required this.requestTypeId});
+  CurrentAndPreviousRequestTypeIdsAreSet({
+    required this.currentAndPreviousRequestTypeIds,
+  });
 }
 
 class RequestTypesReset extends RequestTypesEvent {}

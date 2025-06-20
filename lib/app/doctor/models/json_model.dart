@@ -1,7 +1,7 @@
 final doctors = [
   {
     "id": 1,
-    "image": "https://pngimg.com/d/doctor_PNG16002.png",
+    "image": "assets/images/doctor1.png",
     "name": "Layla Hassan",
     "specialty": "Cardiology",
     "start_time": "2025-05-23T09:00:00Z",
@@ -21,7 +21,7 @@ final doctors = [
   },
   {
     "id": 2,
-    "image": "https://pngimg.com/d/doctor_PNG15957.png",
+    "image": "assets/images/doctor5.png",
     "name": "Samer Baker",
     "specialty": "Cardiology",
     "start_time": "2025-05-23T14:00:00Z",
@@ -41,7 +41,7 @@ final doctors = [
   },
   {
     "id": 3,
-    "image": "https://pngimg.com/d/doctor_PNG15959.png",
+    "image": "assets/images/doctor2.png",
     "name": "Fares Al Midany",
     "specialty": "Neurology",
     "start_time": "2025-05-23T09:00:00Z",
@@ -61,7 +61,7 @@ final doctors = [
   },
   {
     "id": 4,
-    "image": "https://pngimg.com/d/doctor_PNG16020.png",
+    "image": "assets/images/doctor7.png",
     "name": "Sara Eid",
     "specialty": "Neurology",
     "start_time": "2025-05-23T14:00:00Z",
@@ -81,7 +81,7 @@ final doctors = [
   },
   {
     "id": 5,
-    "image": "https://pngimg.com/d/doctor_PNG15992.png",
+    "image": "assets/images/doctor3.png",
     "name": "Omar Khaled",
     "specialty": "Pediatrics",
     "start_time": "2025-05-23T09:00:00Z",
@@ -101,7 +101,7 @@ final doctors = [
   },
   {
     "id": 6,
-    "image": "https://pngimg.com/d/doctor_PNG16012.png",
+    "image": "assets/images/doctor6.png",
     "name": "Rand Skaf",
     "specialty": "Pediatrics",
     "start_time": "2025-05-23T14:00:00Z",
@@ -121,7 +121,7 @@ final doctors = [
   },
   {
     "id": 7,
-    "image": "https://pngimg.com/d/doctor_PNG16014.png",
+    "image": "assets/images/doctor4.png",
     "name": "Maya Al Qassem",
     "specialty": "Dermatology",
     "start_time": "2025-05-23T09:00:00Z",
@@ -141,7 +141,7 @@ final doctors = [
   },
   {
     "id": 8,
-    "image": "https://pngimg.com/d/doctor_PNG16041.png",
+    "image": "assets/images/doctor9.png",
     "name": "Yahya Rajab",
     "specialty": "Dermatology",
     "start_time": "2025-05-23T14:00:00Z",
@@ -161,7 +161,7 @@ final doctors = [
   },
   {
     "id": 9,
-    "image": "https://pngimg.com/d/doctor_PNG16007.png",
+    "image": "assets/images/doctor8.png",
     "name": "Hussein Mansour",
     "specialty": "Oncology",
     "start_time": "2025-05-23T02025-05-23T09:00:00Z:00Z",
@@ -181,7 +181,7 @@ final doctors = [
   },
   {
     "id": 10,
-    "image": "https://pngimg.com/d/doctor_PNG15979.png",
+    "image": "assets/images/doctor10.png",
     "name": "Esam Rehawe",
     "specialty": "Oncology",
     "start_time": "2025-05-23T14:00:00Z",

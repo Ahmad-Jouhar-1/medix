@@ -1,12 +1,10 @@
-import 'package:clinic_management_system/app/book%20appointment/models/department_model.dart';
-
 class AppointmentModel {
   final int id;
   final String shift;
   final String status;
   final String doctorName;
   final String doctorImage;
-  final DepartmentModel department;
+  final String department;
   final DateTime dateTime;
   final int requestTypeId;
   final bool withMedicalReport;
@@ -30,7 +28,7 @@ class AppointmentModel {
       status: jsonData["status"],
       doctorName: jsonData["doctor_name"],
       doctorImage: jsonData["doctor_image"],
-      department: DepartmentModel.fromJson(jsonData["department"]),
+      department: jsonData["department"],
       dateTime: DateTime.parse(jsonData["date_time"]),
       requestTypeId: jsonData["request_type_id"],
       withMedicalReport: jsonData["with_medical_report"],

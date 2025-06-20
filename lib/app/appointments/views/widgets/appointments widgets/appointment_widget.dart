@@ -1,4 +1,4 @@
-import 'package:clinic_management_system/app/appointment%20details/views/screens/appointment_details_screen.dart';
+import 'package:clinic_management_system/app/appointment_details/views/screens/appointment_details_screen.dart';
 import 'package:clinic_management_system/app/appointments/models/appointment_model.dart';
 import 'package:clinic_management_system/app/appointments/views/widgets/appointments%20widgets/doctor_image_widget.dart';
 import 'package:clinic_management_system/app/appointments/views/widgets/appointments%20widgets/doctor_name_widget.dart';
@@ -67,7 +67,7 @@ class AppointmentWidget extends StatelessWidget {
                         //-----------------|Department|-----------------------------------------------------------------------------------------------------------------------------------------------
                         MainReservationInfoWidget(
                           icon: AppIcons.department,
-                          title: appointment.department.name,
+                          title: appointment.department,
                         ),
                         //--------------|Appointment Date|--------------------------------------------------------------------------------------------------------------------------------------------
                         MainReservationInfoWidget(

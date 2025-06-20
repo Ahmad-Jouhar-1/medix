@@ -10,13 +10,13 @@ class TitledCheckboxItem extends StatelessWidget {
     super.key,
     required this.isPreviousChecked,
     required this.isCurrentChecked,
-    required this.canToggle,
+    required this.isTitledCheckboxWidgetActived,
     required this.title,
   });
 
   final bool isPreviousChecked;
   final bool isCurrentChecked;
-  final bool canToggle;
+  final bool isTitledCheckboxWidgetActived;
   final String title;
 
   @override
@@ -30,7 +30,7 @@ class TitledCheckboxItem extends StatelessWidget {
     }
 
     Color specifyTitleAndSideColor() {
-      if (canToggle) {
+      if (isTitledCheckboxWidgetActived) {
         return AppColors.mainTextColor;
       } else {
         return AppColors.hintTextColor;
@@ -41,8 +41,8 @@ class TitledCheckboxItem extends StatelessWidget {
       contentPadding: EdgeInsets.symmetric(horizontal: AppDimensions.mp),
       value: isCurrentChecked,
       onChanged: (value) {
-        if (canToggle) {
-          context.read<TitledCheckboxBloc>().add(IsCurrentCheckedToggled());
+        if (isTitledCheckboxWidgetActived) {
+          context.read<TitledCheckboxBloc>().add(IsCurrentCheckedIsToggled());
         }
       },
       title: TitleItem(title: title, color: specifyTitleAndSideColor()),

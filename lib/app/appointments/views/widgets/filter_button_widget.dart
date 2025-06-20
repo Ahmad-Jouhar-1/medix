@@ -15,7 +15,7 @@ class FilterButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Color specifyFilterButtonBackgroundColor(String filterName) {
       switch (filterName) {
-        case "Upcoming":
+        case "Pending":
           return AppColors.transparentGreen;
         case "Completed":
           return AppColors.transparentYellow;

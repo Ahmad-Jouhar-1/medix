@@ -2,27 +2,41 @@ part of 'times_bloc.dart';
 
 sealed class TimesEvent {}
 
-class CurrentTimeIdChanged extends TimesEvent {
+// class CurrentTimeIdIsChanged extends TimesEvent {
+//   final int currentTimeId;
+
+//   CurrentTimeIdIsChanged({required this.currentTimeId});
+// }
+
+class CurrentTimeAndDoctorIdsAreChanged extends TimesEvent {
   final int currentTimeId;
+  final int currentDoctorId;
 
-  CurrentTimeIdChanged({required this.currentTimeId});
+  CurrentTimeAndDoctorIdsAreChanged({
+    required this.currentTimeId,
+    required this.currentDoctorId,
+  });
 }
 
-class TimesBlocDayIdsChanged extends TimesEvent {
-  final String previousDay;
+class CurrentAndPreviousDayAndCurrentAndPreviousTimeIdsAreSet
+    extends TimesEvent {
   final String currentDay;
+  final String previousDay;
+  final int currentTimeId;
+  final int previousTimeId;
 
-  TimesBlocDayIdsChanged({required this.previousDay, required this.currentDay});
+  CurrentAndPreviousDayAndCurrentAndPreviousTimeIdsAreSet({
+    required this.currentDay,
+    required this.previousDay,
+    required this.currentTimeId,
+    required this.previousTimeId,
+  });
 }
 
-class TimesIdsAreSet extends TimesEvent {
-  final int timeId;
+class TimesWidgetIsReset extends TimesEvent {}
 
-  TimesIdsAreSet({required this.timeId});
-}
+class AreMorningTimesDroppedDownIsToggled extends TimesEvent {}
 
-class TimesReset extends TimesEvent {}
+class AreAfternoonTimesDroppedDownIsToggled extends TimesEvent {}
 
-class IsMorningDroppedDownToggled extends TimesEvent {}
-
-class IsAfternoonDroppedDownToggled extends TimesEvent {}
+class IsTimesWidgetActivatedIsToggled extends TimesEvent {}

@@ -2,15 +2,30 @@ part of 'days_bloc.dart';
 
 sealed class DaysEvent {}
 
-class CurrentDayIdChanged extends DaysEvent {
+class CurrentDayIdIsChanged extends DaysEvent {
   final String currentDay;
-  CurrentDayIdChanged({required this.currentDay});
+  CurrentDayIdIsChanged({required this.currentDay});
 }
 
-class DaysBlocDaysIdsAreSet extends DaysEvent {
-  final String day;
+class CurrentDepartmentIdAndCurrentAndPreviousDayAndPreviousTimeIdAreSet
+    extends DaysEvent {
+  final int currentDepartmentId;
+  final String currentAndPreviousDay;
+  final int previousTimeId;
 
-  DaysBlocDaysIdsAreSet({required this.day});
+  CurrentDepartmentIdAndCurrentAndPreviousDayAndPreviousTimeIdAreSet({
+    required this.currentDepartmentId,
+    required this.currentAndPreviousDay,
+    required this.previousTimeId,
+  });
 }
 
-class DaysReset extends DaysEvent {}
+class CurrentDepartmentIdIsSetAndCurrentDayIdIsReset extends DaysEvent {
+  final int currentDepartmentId;
+
+  CurrentDepartmentIdIsSetAndCurrentDayIdIsReset({
+    required this.currentDepartmentId,
+  });
+}
+
+class IsDaysWidgetActivatedIsToggled extends DaysEvent {}

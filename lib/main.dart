@@ -1,4 +1,4 @@
-import 'package:clinic_management_system/app/bottom%20navigation%20bar/views/screens/bottom_navigation_bar_screen.dart';
+import 'package:clinic_management_system/app/bottom_navigation_bar/views/screens/bottom_navigation_bar_screen.dart';
 import 'package:clinic_management_system/app_bloc_observer.dart';
 import 'package:clinic_management_system/service_locator.dart';
 import 'package:flutter/material.dart';

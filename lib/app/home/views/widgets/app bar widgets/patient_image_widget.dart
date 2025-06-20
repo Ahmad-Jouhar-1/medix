@@ -17,9 +17,7 @@ class PatientImageWidget extends StatelessWidget {
       ),
       clipBehavior: Clip.hardEdge,
       child: const Image(
-        image: NetworkImage(
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkAJEkJQ1WumU0hXNpXdgBt9NUKc0QDVIiaw&s",
-        ),
+        image: AssetImage("assets/images/patient.jpg"),
         fit: BoxFit.cover,
       ),
     );

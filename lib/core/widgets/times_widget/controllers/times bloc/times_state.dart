@@ -2,51 +2,61 @@ part of 'times_bloc.dart';
 
 sealed class TimesState extends Equatable {
   const TimesState({
-    required this.previousTimeId,
+    required this.currentDoctorId,
     required this.currentTimeId,
-    required this.previousDay,
+    required this.previousTimeId,
     required this.currentDay,
-    required this.isMorningDroppedDown,
-    required this.isAfternoonDroppedDown,
+    required this.previousDay,
+    required this.areMorningTimesDroppedDown,
+    required this.areAfternoonTimesDroppedDown,
+    required this.isTimesWidgetActivated,
   });
 
-  final int previousTimeId;
+  final int currentDoctorId;
   final int currentTimeId;
-  final String previousDay;
+  final int previousTimeId;
   final String currentDay;
-  final bool isMorningDroppedDown;
-  final bool isAfternoonDroppedDown;
+  final String previousDay;
+  final bool areMorningTimesDroppedDown;
+  final bool areAfternoonTimesDroppedDown;
+  final bool isTimesWidgetActivated;
 
   @override
   List<Object> get props => [
+    currentDoctorId,
     currentTimeId,
     previousTimeId,
-    previousDay,
     currentDay,
-    isMorningDroppedDown,
-    isAfternoonDroppedDown,
+    previousDay,
+    areMorningTimesDroppedDown,
+    areAfternoonTimesDroppedDown,
+    isTimesWidgetActivated,
   ];
 }
 
 final class TimesInitial extends TimesState {
   const TimesInitial()
     : super(
-        previousTimeId: -1,
+        currentDoctorId: -1,
         currentTimeId: -1,
-        previousDay: "",
+        previousTimeId: -1,
         currentDay: "",
-        isMorningDroppedDown: false,
-        isAfternoonDroppedDown: false,
+        previousDay: "",
+        areMorningTimesDroppedDown: false,
+        areAfternoonTimesDroppedDown: false,
+        isTimesWidgetActivated: false,
       );
 }
 
 final class TimesUpdated extends TimesState {
   const TimesUpdated({
+    required super.currentDoctorId,
     required super.previousTimeId,
     required super.currentTimeId,
     required super.previousDay,
     required super.currentDay,
-    required super.isMorningDroppedDown,
-    required super.isAfternoonDroppedDown,
+    required super.areMorningTimesDroppedDown,
+    required super.areAfternoonTimesDroppedDown,
+    required super.isTimesWidgetActivated, 
   });
 }

@@ -1,4 +1,4 @@
-import 'package:clinic_management_system/app/book%20appointment/models/day_model.dart';
+import 'package:clinic_management_system/app/book_appointment/models/day_model.dart';
 import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
 import 'package:clinic_management_system/core/extentions/percent_sized_extention.dart';
 import 'package:clinic_management_system/core/widgets/days_widget/views/items/day_item.dart';
@@ -10,11 +10,13 @@ class DaysGridViewItem extends StatelessWidget {
     required this.days,
     required this.currentDay,
     required this.previousDay,
+    required this.isDaysWidgetActivated,
   });
 
   final List<DayModel> days;
   final String currentDay;
   final String previousDay;
+  final bool isDaysWidgetActivated;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class DaysGridViewItem extends StatelessWidget {
           day: days[index],
           currentDay: currentDay,
           previousDay: previousDay,
+          isDaysWidgetActivated: isDaysWidgetActivated,
         );
       },
       itemCount: days.length,

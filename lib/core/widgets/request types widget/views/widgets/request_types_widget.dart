@@ -20,7 +20,7 @@ class RequestTypesWidget extends StatelessWidget {
               height: height,
               currentRequestTypeId: state.currentRequestTypeId,
               previousRequestTypeId: state.previousRequestTypeId,
-              isActive: state.isActive,
+              isRequestTypesWidgetActived: state.isRequestTypesWidgetActived,
             );
           },
         ),

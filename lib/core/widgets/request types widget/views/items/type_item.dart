@@ -11,13 +11,13 @@ class TypeItem extends StatelessWidget {
     required this.requestType,
     required this.currentRequestTypeId,
     required this.previousRequestTypeId,
-    required this.isActive,
+    required this.isRequestTypesWidgetActived,
   });
 
   final RequestTypeModel requestType;
   final int currentRequestTypeId;
   final int previousRequestTypeId;
-  final bool isActive;
+  final bool isRequestTypesWidgetActived;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class TypeItem extends StatelessWidget {
         return AppColors.widgetBackgroundColor;
       } else if (requestType.id == currentRequestTypeId) {
         return AppColors.widgetBackgroundColor;
-      } else if (isActive) {
+      } else if (isRequestTypesWidgetActived) {
         return AppColors.mainTextColor;
       } else {
         return AppColors.hintTextColor;
@@ -45,7 +45,7 @@ class TypeItem extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        if (isActive) {
+        if (isRequestTypesWidgetActived) {
           context.read<RequestTypesBloc>().add(
             CurrentRequestTypeIdChanged(currentRequestTypeId: requestType.id),
           );

@@ -1,6 +1,4 @@
-import 'dart:developer';
-
-import 'package:clinic_management_system/app/book%20appointment/models/time_model.dart';
+import 'package:clinic_management_system/app/book_appointment/models/time_model.dart';
 import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
 import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
 import 'package:clinic_management_system/core/errors/constants/app_shadow.dart';
@@ -13,25 +11,26 @@ class TimeItem extends StatelessWidget {
   const TimeItem({
     super.key,
     required this.time,
+    required this.currentDoctorId,
     required this.currentTimeId,
     required this.previousTimeId,
     required this.currentDay,
     required this.previousDay,
+    required this.isTimesWidgetActivated,
   });
 
   final TimeModel time;
+  final int currentDoctorId;
   final int currentTimeId;
   final int previousTimeId;
   final String currentDay;
   final String previousDay;
+  final bool isTimesWidgetActivated;
 
   @override
   Widget build(BuildContext context) {
     Color specifyBackgroundColor() {
       if (time.id == previousTimeId && currentDay == previousDay) {
-        log(
-          "Times Previous Slot: 1-CurrentTimeId: $currentTimeId 2-PreviousTimeId $previousTimeId",
-        );
         return AppColors.transparentYellow;
       } else if (time.id == currentTimeId) {
         return AppColors.primaryColor;
@@ -44,7 +43,7 @@ class TimeItem extends StatelessWidget {
       if (time.id == previousTimeId && currentDay == previousDay ||
           time.id == currentTimeId) {
         return AppColors.widgetBackgroundColor;
-      } else if (time.isAvailable) {
+      } else if (time.isAvailable && isTimesWidgetActivated) {
         return AppColors.mainTextColor;
       } else {
         return AppColors.hintTextColor;
@@ -57,10 +56,10 @@ class TimeItem extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        if (time.id == previousTimeId && currentDay == previousDay ||
-            time.isAvailable) {
+        if ((time.id == previousTimeId && currentDay == previousDay) ||
+            (time.isAvailable && isTimesWidgetActivated)) {
           context.read<TimesBloc>().add(
-            CurrentTimeIdChanged(currentTimeId: time.id),
+            CurrentTimeAndDoctorIdsAreChanged(currentDoctorId: currentDoctorId,currentTimeId: time.id),
           );
         }
       },

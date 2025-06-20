@@ -5,6 +5,8 @@ class ApiInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     options.headers[ApiKey.accept] = "application/json";
+    options.headers[ApiKey.authorization] =
+        "Bearer 2|J7PjqvzmyVskKFhS9RbhY15hYNP4FDJIiVYxhB43a720068f";
     super.onRequest(options, handler);
   }
 }

@@ -6,21 +6,55 @@ part 'days_state.dart';
 
 class DaysBloc extends Bloc<DaysEvent, DaysState> {
   DaysBloc() : super(DaysInitial()) {
-    on<CurrentDayIdChanged>((event, emit) {
+    on<CurrentDayIdIsChanged>((event, emit) {
       emit(
         DaysUpdated(
+          currentDepartmentId: state.currentDepartmentId,
           currentDay: event.currentDay,
           previousDay: state.previousDay,
+          previousTimeId: state.previousTimeId,
+          isDaysWidgetActivated: state.isDaysWidgetActivated,
         ),
       );
     });
 
-    on<DaysBlocDaysIdsAreSet>((event, emit) {
-      emit(DaysUpdated(currentDay: event.day, previousDay: event.day));
+    on<CurrentDepartmentIdAndCurrentAndPreviousDayAndPreviousTimeIdAreSet>((
+      event,
+      emit,
+    ) {
+      emit(
+        DaysUpdated(
+          currentDepartmentId: event.currentDepartmentId,
+          currentDay: event.currentAndPreviousDay,
+          previousDay: event.currentAndPreviousDay,
+          previousTimeId: event.previousTimeId,
+          isDaysWidgetActivated: state.isDaysWidgetActivated,
+        ),
+      );
     });
 
-    on<DaysReset>((event, emit) {
-      emit(DaysUpdated(currentDay: "", previousDay: ""));
+    on<CurrentDepartmentIdIsSetAndCurrentDayIdIsReset>((event, emit) {
+      emit(
+        DaysUpdated(
+          currentDepartmentId: event.currentDepartmentId,
+          currentDay: "",
+          previousDay: "",
+          previousTimeId: -1,
+          isDaysWidgetActivated: true,
+        ),
+      );
+    });
+
+    on<IsDaysWidgetActivatedIsToggled>((event, emit) {
+      emit(
+        DaysUpdated(
+          currentDepartmentId: state.currentDepartmentId,
+          currentDay: state.previousDay,
+          previousDay: state.previousDay,
+          previousTimeId: state.previousTimeId,
+          isDaysWidgetActivated: !state.isDaysWidgetActivated,
+        ),
+      );
     });
   }
 }

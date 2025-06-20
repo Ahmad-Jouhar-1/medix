@@ -15,7 +15,7 @@ class TitledCheckboxWidget extends StatelessWidget {
         return TitledCheckboxItem(
           isPreviousChecked: state.isPreviousChecked,
           isCurrentChecked: state.isCurrentChecked,
-          canToggle: state.isActive,
+          isTitledCheckboxWidgetActived: state.isTitledCheckboxWidgetActived,
           title: title,
         );
       },

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'request_types_event.dart';
@@ -8,13 +6,12 @@ part 'request_types_state.dart';
 class RequestTypesBloc extends Bloc<RequestTypesEvent, RequestTypesState> {
   RequestTypesBloc() : super(RequestTypesInitial()) {
     on<CurrentRequestTypeIdChanged>((event, emit) {
-      log(event.currentRequestTypeId.toString());
       emit(
         RequestTypesUpdated(
           currentRequestTypeId: event.currentRequestTypeId,
           previousRequestTypeId: state.previousRequestTypeId,
           isDroppedDown: state.isDroppedDown,
-          isActive: state.isActive,
+          isRequestTypesWidgetActived: state.isRequestTypesWidgetActived,
         ),
       );
     });
@@ -25,29 +22,29 @@ class RequestTypesBloc extends Bloc<RequestTypesEvent, RequestTypesState> {
           currentRequestTypeId: state.currentRequestTypeId,
           previousRequestTypeId: state.previousRequestTypeId,
           isDroppedDown: !state.isDroppedDown,
-          isActive: state.isActive,
+          isRequestTypesWidgetActived: state.isRequestTypesWidgetActived,
         ),
       );
     });
 
-    on<RequestTypesAreActivated>((event, emit) {
+    on<IsRequestTypesWidgetActivedIsToggled>((event, emit) {
       emit(
         RequestTypesUpdated(
-          currentRequestTypeId: state.currentRequestTypeId,
+          currentRequestTypeId: state.previousRequestTypeId,
           previousRequestTypeId: state.previousRequestTypeId,
           isDroppedDown: state.isDroppedDown,
-          isActive: true,
+          isRequestTypesWidgetActived: !state.isRequestTypesWidgetActived,
         ),
       );
     });
 
-    on<ActivatedAndRequestTypeIdsAreSet>((event, emit) {
+    on<CurrentAndPreviousRequestTypeIdsAreSet>((event, emit) {
       emit(
         RequestTypesUpdated(
-          currentRequestTypeId: event.requestTypeId,
-          previousRequestTypeId: event.requestTypeId,
+          currentRequestTypeId: event.currentAndPreviousRequestTypeIds,
+          previousRequestTypeId: event.currentAndPreviousRequestTypeIds,
           isDroppedDown: state.isDroppedDown,
-          isActive: true,
+          isRequestTypesWidgetActived: state.isRequestTypesWidgetActived,
         ),
       );
     });
@@ -58,7 +55,7 @@ class RequestTypesBloc extends Bloc<RequestTypesEvent, RequestTypesState> {
           currentRequestTypeId: -1,
           previousRequestTypeId: -1,
           isDroppedDown: false,
-          isActive: false,
+          isRequestTypesWidgetActived: false,
         ),
       );
     });

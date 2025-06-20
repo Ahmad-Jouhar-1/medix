@@ -39,7 +39,7 @@ class MostRatedDoctorImageAndSpecialtyWidget extends StatelessWidget {
             //-----------------Image-----------------------------------------------------------------------------------------------------------------
             Align(
               alignment: Alignment.center,
-              child: Image(image: NetworkImage(image)),
+              child: Image(image: AssetImage(image)),
             ),
             //-----------------Specialty-----------------------------------------------------------------------------------------------------------------
             Positioned(

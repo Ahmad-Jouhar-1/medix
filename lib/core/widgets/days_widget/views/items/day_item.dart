@@ -1,4 +1,4 @@
-import 'package:clinic_management_system/app/book%20appointment/models/day_model.dart';
+import 'package:clinic_management_system/app/book_appointment/models/day_model.dart';
 import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
 import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
 import 'package:clinic_management_system/core/errors/constants/app_shadow.dart';
@@ -13,11 +13,13 @@ class DayItem extends StatelessWidget {
     required this.day,
     required this.currentDay,
     required this.previousDay,
+    required this.isDaysWidgetActivated,
   });
 
   final DayModel day;
   final String currentDay;
   final String previousDay;
+  final bool isDaysWidgetActivated;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class DayItem extends StatelessWidget {
     Color specifyTitleColor() {
       if (day.day == previousDay || day.day == currentDay) {
         return AppColors.widgetBackgroundColor;
-      } else if (day.isAvailable) {
+      } else if (day.isAvailable && isDaysWidgetActivated) {
         return AppColors.mainTextColor;
       } else {
         return AppColors.hintTextColor;
@@ -51,9 +53,10 @@ class DayItem extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        if (day.isAvailable || day.day == previousDay) {
+        if (isDaysWidgetActivated && day.isAvailable ||
+            day.day == previousDay) {
           context.read<DaysBloc>().add(
-            CurrentDayIdChanged(currentDay: day.day),
+            CurrentDayIdIsChanged(currentDay: day.day),
           );
         }
       },

@@ -1,4 +1,4 @@
-import 'package:clinic_management_system/app/book%20appointment/views/screens/book_appointment_screen.dart';
+import 'package:clinic_management_system/app/book_appointment/views/screens/book_appointment_screen.dart';
 import 'package:clinic_management_system/app/home/views/widgets/services%20button%20widgets/service_button_widget.dart';
 import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
 import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';

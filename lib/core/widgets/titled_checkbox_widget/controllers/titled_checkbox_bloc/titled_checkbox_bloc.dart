@@ -6,42 +6,42 @@ part 'titled_checkbox_state.dart';
 class TitledCheckboxBloc
     extends Bloc<TitledCheckboxEvent, TitledCheckboxState> {
   TitledCheckboxBloc() : super(TitledCheckboxInitial()) {
-    on<IsCurrentCheckedToggled>((event, emit) {
+    on<IsCurrentCheckedIsToggled>((event, emit) {
       emit(
         TitledCheckboxUpdated(
           isPreviousChecked: state.isPreviousChecked,
           isCurrentChecked: !state.isCurrentChecked,
-          isActive: state.isActive,
+          isTitledCheckboxWidgetActived: state.isTitledCheckboxWidgetActived,
         ),
       );
     });
 
-    on<TitledCheckboxIsActivated>((event, emit) {
+    on<IsTitledCheckboxWidgetActivatedIsToggled>((event, emit) {
       emit(
         TitledCheckboxUpdated(
           isPreviousChecked: state.isPreviousChecked,
-          isCurrentChecked: state.isCurrentChecked,
-          isActive: true,
+          isCurrentChecked: state.isPreviousChecked,
+          isTitledCheckboxWidgetActived: !state.isTitledCheckboxWidgetActived,
         ),
       );
     });
 
-    on<ActivatedAndChecksAreSet>((event, emit) {
+    on<CurrentAndPreviousCheckAreSet>((event, emit) {
       emit(
         TitledCheckboxUpdated(
-          isPreviousChecked: event.isChecked,
-          isCurrentChecked: event.isChecked,
-          isActive: true,
+          isPreviousChecked: event.currentAndPreviousCheck,
+          isCurrentChecked: event.currentAndPreviousCheck,
+          isTitledCheckboxWidgetActived: state.isTitledCheckboxWidgetActived,
         ),
       );
     });
 
-    on<TitledCheckboxReset>((event, emit) {
+    on<TitledCheckboxWidgetIsReset>((event, emit) {
       emit(
         TitledCheckboxUpdated(
           isPreviousChecked: false,
           isCurrentChecked: false,
-          isActive: false,
+          isTitledCheckboxWidgetActived: false,
         ),
       );
     });

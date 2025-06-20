@@ -39,6 +39,7 @@ class DioConsumer extends ApiConsumer {
         queryParameters: queryParameter,
         options: options,
       );
+
       return response.data;
     } on DioException catch (e) {
       handleDioExceptions(e);
@@ -67,7 +68,7 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
-  Future patch(
+  Future put(
     String path, {
     dynamic data,
     Map<String, dynamic>? queryParameter,
@@ -75,7 +76,7 @@ class DioConsumer extends ApiConsumer {
     bool isFormData = false,
   }) async {
     try {
-      final response = await dio.patch(
+      final response = await dio.put(
         path,
         data: isFormData ? FormData.fromMap(data) : data,
         queryParameters: queryParameter,
