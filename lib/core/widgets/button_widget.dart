@@ -1,5 +1,5 @@
-import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
-import 'package:clinic_management_system/core/errors/constants/app_shadow.dart';
+import 'package:clinic_management_system/core/constants/app_dimensions.dart';
+import 'package:clinic_management_system/core/constants/app_shadow.dart';
 import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {

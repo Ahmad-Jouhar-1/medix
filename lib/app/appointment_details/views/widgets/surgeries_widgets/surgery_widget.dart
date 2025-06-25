@@ -1,9 +1,9 @@
 import 'package:clinic_management_system/app/appointment_details/views/widgets/main_info_widget.dart';
-import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
-import 'package:clinic_management_system/core/errors/constants/app_shadow.dart';
+import 'package:clinic_management_system/core/constants/app_dimensions.dart';
+import 'package:clinic_management_system/core/constants/app_shadow.dart';
 import 'package:clinic_management_system/core/extentions/percent_sized_extention.dart';
-import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
-import 'package:clinic_management_system/core/errors/constants/app_icons.dart';
+import 'package:clinic_management_system/core/constants/app_colors.dart';
+import 'package:clinic_management_system/core/constants/app_icons.dart';
 import 'package:flutter/material.dart';
 
 class SurgeryWidget extends StatelessWidget {

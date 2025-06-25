@@ -1,7 +1,7 @@
 import 'package:clinic_management_system/app/appointments/controllers/appointments%20bloc/appointments_bloc.dart';
 import 'package:clinic_management_system/app/appointments/controllers/filter%20bloc/filter_bloc.dart';
 import 'package:clinic_management_system/app/appointments/views/sections/appointments_section.dart';
-import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
+import 'package:clinic_management_system/core/constants/app_colors.dart';
 import 'package:clinic_management_system/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:clinic_management_system/app/book_appointment/models/time_model.dart';
-import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
+import 'package:clinic_management_system/core/constants/app_dimensions.dart';
 import 'package:clinic_management_system/core/extentions/percent_sized_extention.dart';
 import 'package:clinic_management_system/core/widgets/times_widget/views/items/drop_down_button_item.dart';
 import 'package:clinic_management_system/core/widgets/times_widget/views/items/time_item.dart';

@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
-import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
+import 'package:clinic_management_system/core/constants/app_colors.dart';
+import 'package:clinic_management_system/core/constants/app_dimensions.dart';
 import 'package:clinic_management_system/core/extentions/percent_sized_extention.dart';
 import 'package:flutter/widgets.dart';
 

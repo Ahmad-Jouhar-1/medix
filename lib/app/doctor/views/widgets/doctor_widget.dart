@@ -6,7 +6,7 @@ import 'package:clinic_management_system/app/doctor/views/widgets/doctor_image_w
 import 'package:clinic_management_system/app/doctor/views/widgets/doctor_name_and_specialty_widget.dart';
 import 'package:clinic_management_system/app/doctor/views/widgets/doctor_qualifications_widget.dart';
 import 'package:clinic_management_system/app/doctor/views/widgets/doctor_shift_and_rate_widget.dart';
-import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
+import 'package:clinic_management_system/core/constants/app_dimensions.dart';
 import 'package:clinic_management_system/core/widgets/subtitle_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

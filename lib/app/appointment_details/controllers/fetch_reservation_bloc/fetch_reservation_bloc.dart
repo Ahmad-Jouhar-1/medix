@@ -1,5 +1,6 @@
 import 'package:clinic_management_system/core/api/dio_consumer.dart';
 import 'package:clinic_management_system/core/api/end_points.dart';
+import 'package:clinic_management_system/core/errors/exceptions.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:clinic_management_system/app/book_appointment/models/reservation_model.dart';
@@ -20,21 +21,15 @@ class FetchReservationBloc
         return;
       }
       emit(FetchReservationLoading());
-      await Future.delayed(Duration(seconds: 2));
       try {
         dynamic response = await api.get(
-          EndPoints.getReservation(event.appointmentId),
+          EndPoints.appointmentId(event.appointmentId),
         );
         reservation = ReservationModel.fromJson(response);
         hasFetched = true;
         emit(FetchReservationLoaded(reservation: reservation));
-      } catch (e) {
-        emit(
-          FetchReservationFailed(
-            errorMessage:
-                "Something Went Wrong When Trying To Fetch Reservation",
-          ),
-        );
+      } on ServerException catch (e) {
+        emit(FetchReservationFailed(errorMessage: e.errorModel.errorMessage));
       }
     });
   }

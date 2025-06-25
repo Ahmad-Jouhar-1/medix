@@ -1,8 +1,8 @@
 import 'package:clinic_management_system/app/bottom_navigation_bar/controllers/bottom%20navigation%20bar%20bloc/bottom_navigation_bar_bloc.dart';
 import 'package:clinic_management_system/app/bottom_navigation_bar/models/item_model.dart';
 import 'package:clinic_management_system/app/bottom_navigation_bar/models/json_data.dart';
-import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
-import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
+import 'package:clinic_management_system/core/constants/app_colors.dart';
+import 'package:clinic_management_system/core/constants/app_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';

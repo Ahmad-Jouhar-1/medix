@@ -2,8 +2,8 @@ import 'package:clinic_management_system/app/appointments/controllers/appointmen
 import 'package:clinic_management_system/app/appointments/controllers/filter%20bloc/filter_bloc.dart';
 import 'package:clinic_management_system/app/appointments/views/widgets/filter_button_widget.dart';
 import 'package:clinic_management_system/app/appointments/views/widgets/search_widget.dart';
-import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
-import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
+import 'package:clinic_management_system/core/constants/app_colors.dart';
+import 'package:clinic_management_system/core/constants/app_dimensions.dart';
 import 'package:clinic_management_system/core/extentions/percent_sized_extention.dart';
 import 'package:clinic_management_system/service_locator.dart';
 import 'package:flutter/material.dart';

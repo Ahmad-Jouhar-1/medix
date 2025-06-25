@@ -1,7 +1,7 @@
 import 'package:clinic_management_system/app/book_appointment/models/time_model.dart';
-import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
-import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
-import 'package:clinic_management_system/core/errors/constants/app_shadow.dart';
+import 'package:clinic_management_system/core/constants/app_colors.dart';
+import 'package:clinic_management_system/core/constants/app_dimensions.dart';
+import 'package:clinic_management_system/core/constants/app_shadow.dart';
 import 'package:clinic_management_system/core/widgets/times_widget/controllers/times%20bloc/times_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -59,7 +59,10 @@ class TimeItem extends StatelessWidget {
         if ((time.id == previousTimeId && currentDay == previousDay) ||
             (time.isAvailable && isTimesWidgetActivated)) {
           context.read<TimesBloc>().add(
-            CurrentTimeAndDoctorIdsAreChanged(currentDoctorId: currentDoctorId,currentTimeId: time.id),
+            CurrentTimeAndDoctorIdsAreChanged(
+              currentDoctorId: currentDoctorId,
+              currentTimeId: time.id,
+            ),
           );
         }
       },

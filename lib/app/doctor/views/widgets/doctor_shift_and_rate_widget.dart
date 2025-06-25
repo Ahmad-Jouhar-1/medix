@@ -1,6 +1,6 @@
 import 'package:clinic_management_system/app/doctor/views/widgets/doctor_info_with_icon_widget.dart';
-import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
-import 'package:clinic_management_system/core/errors/constants/app_icons.dart';
+import 'package:clinic_management_system/core/constants/app_dimensions.dart';
+import 'package:clinic_management_system/core/constants/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 

@@ -2,9 +2,9 @@ import 'package:clinic_management_system/app/home/views/widgets/app%20bar%20widg
 import 'package:clinic_management_system/app/home/views/widgets/app%20bar%20widgets/patient_image_widget.dart';
 import 'package:clinic_management_system/app/home/views/widgets/app%20bar%20widgets/patient_location_widget.dart';
 import 'package:clinic_management_system/app/home/views/widgets/app%20bar%20widgets/patient_name_widget.dart';
-import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
-import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
-import 'package:clinic_management_system/core/errors/constants/app_icons.dart';
+import 'package:clinic_management_system/core/constants/app_colors.dart';
+import 'package:clinic_management_system/core/constants/app_dimensions.dart';
+import 'package:clinic_management_system/core/constants/app_icons.dart';
 import 'package:clinic_management_system/core/extentions/percent_sized_extention.dart';
 import 'package:clinic_management_system/core/extentions/responsive_text_extention.dart';
 import 'package:flutter/material.dart';

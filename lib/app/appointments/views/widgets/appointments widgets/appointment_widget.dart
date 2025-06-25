@@ -4,12 +4,12 @@ import 'package:clinic_management_system/app/appointments/views/widgets/appointm
 import 'package:clinic_management_system/app/appointments/views/widgets/appointments%20widgets/doctor_name_widget.dart';
 import 'package:clinic_management_system/app/appointments/views/widgets/appointments%20widgets/main_reservation_info_widget.dart';
 import 'package:clinic_management_system/app/appointments/views/widgets/appointments%20widgets/status_widget.dart';
-import 'package:clinic_management_system/core/errors/constants/app_dimensions.dart';
-import 'package:clinic_management_system/core/errors/constants/app_shadow.dart';
+import 'package:clinic_management_system/core/constants/app_dimensions.dart';
+import 'package:clinic_management_system/core/constants/app_shadow.dart';
 import 'package:clinic_management_system/core/extentions/percent_sized_extention.dart';
 import 'package:clinic_management_system/core/widgets/secondary_info_widget.dart';
-import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
-import 'package:clinic_management_system/core/errors/constants/app_icons.dart';
+import 'package:clinic_management_system/core/constants/app_colors.dart';
+import 'package:clinic_management_system/core/constants/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';

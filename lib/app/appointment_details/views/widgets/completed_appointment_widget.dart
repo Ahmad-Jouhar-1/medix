@@ -6,7 +6,7 @@ import 'package:clinic_management_system/app/appointment_details/views/widgets/m
 import 'package:clinic_management_system/app/appointment_details/views/widgets/summary_widgets/summary_widget.dart';
 import 'package:clinic_management_system/app/appointment_details/views/widgets/surgeries_widgets/surgeries_widget.dart';
 import 'package:clinic_management_system/app/appointments/models/appointment_model.dart';
-import 'package:clinic_management_system/core/errors/constants/app_colors.dart';
+import 'package:clinic_management_system/core/constants/app_colors.dart';
 import 'package:clinic_management_system/core/extentions/percent_sized_extention.dart';
 import 'package:clinic_management_system/core/widgets/subtitle_widget.dart';
 import 'package:clinic_management_system/service_locator.dart';
