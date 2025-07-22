@@ -1,5 +1,5 @@
 class EndPoints {
-  static String baseUrl = "http://192.168.1.2:8000";
+  static String baseUrl = "http://192.168.65.202:8000";
 
   static String departmentId(int departmentId) {
     return "/api/department/$departmentId";

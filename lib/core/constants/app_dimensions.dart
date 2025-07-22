@@ -12,16 +12,16 @@ class AppDimensions {
   static double lm = 6.0.wp;
   static double xlm = 8.0.wp;
 
-  static double sbr = 12.0.sp;
-  static double mbr = 15.0.sp;
-  static double lbr = 999.0.sp;
+  static double sbr = 20.0;
+  static double mbr = 24.0;
+  static double lbr = 999.0;
 
   static double sfs = 10.0.sp;
   static double mfs = 12.0.sp;
   static double lfs = 14.0.sp;
   static double xlfs = 16.0.sp;
 
-  static double sis = 15.0.sp;
-  static double mis = 20.0.sp;
-  static double lis = 30.0.sp;
+  static double sis = 6.0.wp;
+  static double mis = 8.0.wp;
+  static double lis = 10.0.wp;
 }
